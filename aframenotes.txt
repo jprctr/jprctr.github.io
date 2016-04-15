@@ -1,0 +1,45 @@
+A-Frame is an open source library for creating VR experiences on the web. It's developed by the Mozilla VR team.
+
+It works on desktop, iOS, Android, and Oculus. Even if you don't have something big and expensive like the Oculus, it will work great on your phone in a simple carboard headset.
+
+https://aframe.io
+
+
+Using it looks a lot like writing HTML, with custom elements that make up the elements of your VR scene. 
+
+https://aframe.io/examples/
+
+    <a-scene> 
+
+      <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+      <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+      <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+
+Relevant Examples:
+	Curved Images:
+	https://aframe.io/examples/showcase/curved-mockups/
+
+	360 Video:
+	https://aframe.io/examples/showcase/videosphere/
+
+	Interaction:
+	https://aframe.io/examples/showcase/cursor/
+
+
+Full Docs:
+https://aframe.io/docs/guide/
+
+Advanced things you might want to try:
+	- Audio http://www.createjs.com/soundjs
+	- 3d model (DAE/Collada) https://aframe.io/docs/components/collada-model.html
+	- Cube-of-images (mine... simplify example)
+	- Add/update scene with JavaScript
+
+More examples and inspiration:
+https://aframevr.tumblr.com/

@@ -1,20 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, shrink-to-fit=0, initial-scale=1.0">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>ios-video-test</title>
     <meta charset="utf-8">
-    <title>360 Video</title>
-    <meta name="description" content="360 Video — A-Frame">
-    <script src="aframe.js"></script>
-  </head>
-  <body>
-    <a-scene>
+    <title>A-FRAME Intro</title>
+    <style type="text/css">
+    #container {
+        width: 800px;
+        margin: auto;
+        font-family: helvetica;
+    }
+    img.sm {
+        max-width: 250px;
+    }
+    a:hover {
+      opacity: 0.5;
+    }
+    </style>
+</head>
 
-      <a-videosphere webkit-playsinline="true" src="orbital_160126a.mp4" autoplay="true" loop="true" rotation="0 180 0"></a-videosphere>
+<body>
+    <div id="container">
+        <h1>A-FRAME Intro</h1>
+        <p>
+            <a target="_blank" href="https://aframe.io">A-Frame</a> is an open source library for creating VR experiences on the web. It's developed by the Mozilla VR team.
+        </p>
+        <p>
+            It works on desktop, iOS, Android, and Oculus. Even if you don't have something big and expensive like the Oculus, it will work on your phone in a simple carboard headset.
+        </p>
+        <p>
+            Using it looks a lot like writing HTML, with custom elements that make up the elements of your VR scene. From the <a target="_blank" href="https://aframe.io/examples/">Hello World Example</a>:
+        </p>
+        <a target="_blank" href="https://aframe.io/examples/">
+            <img src="images/hw.png">
+        </a>
+        <pre>
+        <code>
+&lt;a-scene&gt; 
 
-    </a-scene>
-  </body>
+  &lt;a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"&gt;&lt;/a-sphere&gt;
+  &lt;a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"&gt;&lt;/a-box&gt;
+  &lt;a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"&gt;&lt;/a-cylinder&gt;
+
+  &lt;a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"&gt;&lt;/a-plane&gt;
+  &lt;a-sky color="#ECECEC"&gt;&lt;/a-sky&gt;
+
+&lt;/a-scene&gt;
+        </code>
+      </pre>
+        <h2>
+          <a target="_blank" href="https://aframe.io/docs/guide/">See the full documentation here</a>
+        </h2>
+        <h2>A few other relevant examples:</h2>
+        <ul>
+            <a target="_blank" href="https://aframe.io/examples/showcase/curved-mockups/">
+                <li>
+                    <div>Curved Images</div>
+                    <img class="sm" src="images/ci.png"></li>
+            </a>
+            <a target="_blank" href="https://aframe.io/examples/showcase/videosphere/">
+                <li>
+                    <div>360 Video*</div>
+                    <img class="sm" src="images/tv.png"></li>
+            </a>
+            <a target="_blank" href="https://aframe.io/examples/showcase/cursor/">
+                <li>
+                    <div>Interaction</div>
+                    <img class="sm" src="images/in.png"></li>
+            </a>
+        </ul>
+        <h2>* Video on iOS</h2>
+        <p>
+          <a target="_blank" href="http://jprctr.github.io/examples/iOS360video">Here's a working example.</a>
+        </p>
+        <p>
+          <a target="_blank" href="https://aframe.io/docs/primitives/a-videosphere.html#Caveats">
+          iOS has a lot of restrictions on playing videos in the browser. To play an inline video texture, we must:
+          <ul>
+            <li>Set the <code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;</code> meta tag (will be injected if missing).</li>
+            <li>Set the <code>webkit-playsinline</code> attribute to the video element.</li>
+            <li>Pin the webpage to the iOS homescreen.</li>
+          </ul>
+          </a>
+        </p>
+        <h2>Advanced things you might want to try:</h2>
+        <ul>
+          <li>
+            Audio using a library like <a target="_blank" href="http://www.createjs.com/soundjs">Soundjs</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://aframe.io/docs/components/collada-model.html">3d model (DAE/Collada)</a>
+          </li>
+          <li>
+            Add/update the scene with JavaScript
+          </li>
+        </ul>
+    </div>
+</body>
+
 </html>
