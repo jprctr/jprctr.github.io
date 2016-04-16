@@ -11,44 +11,28 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        // console.log('lol');
+        // var video = document.querySelector('#vs');
+        // console.log(video);
+        // console.log(video.currentTime);
+        document.querySelector('#vs').addEventListener('click', function() {
+          console.log('hello?');
+          console.log(this);
+          console.log(e);
+        });
+
         var toggle = false;
         document.querySelector('#sphere').addEventListener('click', function () {
           if (toggle) {
-            this.setAttribute('color', '#000000');
+            this.setAttribute('color', '#333333');
             $('#vs').attr('src','eclipse_151223a.mp4');
           } else {
-            this.setAttribute('color', '#ffffff');
+            this.setAttribute('color', '#666666');
             $('#vs').attr('src','orbital_160126a.mp4');
           }
           toggle = !toggle;
-          // console.log('I was hovered!');
-          // this.set
-          console.log('acted');
         });
-        // var video = $('#vs');
-        // document.querySelector('#vs').addEventListener('ontimeupdate', function (e){
-        //   console.log(e);
-        // });
-
-        // console.log(video);
-        // video.addEventListener
-        // $('#vs')
-        // video[0].addEventListener('ontimeupdate', function (evt) {
-        //   console.log('hello');
-        //   console.log(this);
-        //   console.log(evt);
-        // });
-        // video.on('timeupdate',function (e){
-        //   console.log('this');
-        //   console.log(this);
-        //   console.log(evt);
-        // });
-        // video.on('timeupdate', function (a) {
-        //   console.log(hello);
-        //   console.log(a);
-        // });
-        // console.log(video);
+        
+        // How to watch for 
 
       });
     </script>
@@ -57,17 +41,21 @@
     <a-scene>
       <a-entity position="0 1.8 4">
         <a-camera id="camera">
-        <!-- cursor="fuse: true; maxDistance: 30; timeout: 500" -->
-          <a-cursor fuse="true" maxDistance="100" timeout="1" color="#999999"></a-cursor>
+          <a-cursor fuse="true" maxDistance="100" timeout="1" color="#ffffff"></a-cursor>
         </a-camera>
       </a-entity>
       <!--  -->
-      <!-- <a-entity light="type: ambient; color: #CCC"></a-entity> -->
-      <!--  -->
-      <a-sphere id="sphere" position="-6 1.25 -1" radius="1.25" color="#ffffff"></a-sphere>
+      <!--  position="-6 1.25 -1" -->
+      <a-sphere id="sphere" position="0 -2.5 0" radius="1" color="#333333">
+        <a-animation begin="click" easing="ease-in" attribute="scale"
+                     fill="backwards" from="0.75 0.75 0.75" to="1 1 1"></a-animation>
+        <a-animation begin="fusing" easing="ease-in" attribute="scale"
+                     fill="forwards" from="1 1 1" to="0.75 0.75 0.75"></a-animation>
+      </a-sphere>
+      <a-image src="cc.png" rotation="-90 0 0" position="0 0 4"></a-image>
+<!-- width="200" height="100" -->
       <!--  -->
       <a-videosphere id="vs" webkit-playsinline="true" src="eclipse_151223a.mp4" autoplay="true" loop="true" rotation="0 270 0"></a-videosphere>
-
     </a-scene>
   </body>
 </html>
