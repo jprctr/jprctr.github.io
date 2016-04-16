@@ -11,14 +11,6 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
-        // var video = document.querySelector('#vs');
-        // console.log(video);
-        // console.log(video.currentTime);
-        document.querySelector('#vs').addEventListener('click', function() {
-          console.log('hello?');
-          console.log(this);
-          console.log(e);
-        });
 
         var toggle = false;
         document.querySelector('#sphere').addEventListener('click', function () {
@@ -31,8 +23,7 @@
           }
           toggle = !toggle;
         });
-        
-        // How to watch for 
+         
 
       });
     </script>
@@ -45,7 +36,6 @@
         </a-camera>
       </a-entity>
       <!--  -->
-      <!--  position="-6 1.25 -1" -->
       <a-sphere id="sphere" position="0 -2.5 0" radius="1" color="#333333">
         <a-animation begin="click" easing="ease-in" attribute="scale"
                      fill="backwards" from="0.75 0.75 0.75" to="1 1 1"></a-animation>
@@ -53,7 +43,6 @@
                      fill="forwards" from="1 1 1" to="0.75 0.75 0.75"></a-animation>
       </a-sphere>
       <a-image src="cc.png" rotation="-90 0 0" position="0 0 4"></a-image>
-<!-- width="200" height="100" -->
       <!--  -->
       <a-videosphere id="vs" webkit-playsinline="true" src="eclipse_151223a.mp4" autoplay="true" loop="true" rotation="0 270 0"></a-videosphere>
     </a-scene>
