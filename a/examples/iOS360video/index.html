@@ -8,66 +8,10 @@
     <title>Swap Video</title>
     <meta name="description" content="360 Video — A-Frame">
     <script src="../../aframe.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        // console.log('lol');
-        var toggle = false;
-        document.querySelector('#sphere').addEventListener('click', function () {
-          if (toggle) {
-            this.setAttribute('color', '#000000');
-            $('#vs').attr('src','eclipse_151223a.mp4');
-          } else {
-            this.setAttribute('color', '#ffffff');
-            $('#vs').attr('src','orbital_160126a.mp4');
-          }
-          toggle = !toggle;
-          // console.log('I was hovered!');
-          // this.set
-          console.log('acted');
-        });
-        // var video = $('#vs');
-        // document.querySelector('#vs').addEventListener('ontimeupdate', function (e){
-        //   console.log(e);
-        // });
-
-        // console.log(video);
-        // video.addEventListener
-        // $('#vs')
-        // video[0].addEventListener('ontimeupdate', function (evt) {
-        //   console.log('hello');
-        //   console.log(this);
-        //   console.log(evt);
-        // });
-        // video.on('timeupdate',function (e){
-        //   console.log('this');
-        //   console.log(this);
-        //   console.log(evt);
-        // });
-        // video.on('timeupdate', function (a) {
-        //   console.log(hello);
-        //   console.log(a);
-        // });
-        // console.log(video);
-
-      });
-    </script>
   </head>
   <body>
     <a-scene>
-      <a-entity position="0 1.8 4">
-        <a-camera id="camera">
-        <!-- cursor="fuse: true; maxDistance: 30; timeout: 500" -->
-          <a-cursor fuse="true" maxDistance="100" timeout="1" color="#ffffff"></a-cursor>
-        </a-camera>
-      </a-entity>
-      <!--  -->
-      <!-- <a-entity light="type: ambient; color: #CCC"></a-entity> -->
-      <!--  -->
-      <a-sphere id="sphere" position="-6 1.25 -1" radius="1.25" color="#ffffff"></a-sphere>
-      <!--  -->
       <a-videosphere id="vs" webkit-playsinline="true" src="eclipse_151223a.mp4" autoplay="true" loop="true" rotation="0 270 0"></a-videosphere>
-
     </a-scene>
   </body>
 </html>
